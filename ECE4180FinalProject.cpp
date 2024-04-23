@@ -1,4 +1,3 @@
-
 #include "Thread.h"
 #include "mbed.h"
 #include "rtos.h"
@@ -19,6 +18,9 @@ Motor m(p21, p6, p5); // pwm, fwd, rev , left motor
 Motor m2(p22, p8, p7); //right motor
 Serial bluetooth(p28, p27); //bluetooth controller
 
+volatile bool mode; // the mode to turn on manual control or the pi
+// if mode = 1(auto mode) if more = 0 manual mode.
+
 Mutex motor_mutex;
 volatile int sonar_distance;
 volatile int pi_instruction;
@@ -28,18 +30,15 @@ volatile float motor_1_movement;
 volatile float motor_2_movement;
 
 
-
  void dist(int distance)
 {
-    //put code here to execute when the distance has changed
-    printf("Distance %d mm\r\n", distance);
+    printf("Distance %d mm\r\n", distance); //only need this for debugging
 }
 
 ultrasonic mu(p11, p12, .1, 1, &dist);
 
 
 void motor_control(void const *args) {
-
     while(1) {
     motor_mutex.lock();
     m.speed(motor_1_movement);
@@ -49,13 +48,14 @@ void motor_control(void const *args) {
     }
 
 }
-void serial_control(void const *agrs) {
+void serial_control(void const *args) {
     char bnum=0;
     char bhit=0;
     while(1) {
         while (!pi.readable()) {
         Thread::wait(20);
         }
+         motor_mutex.lock();
       if (pi.getc()=='!') {
             if (pi.getc()=='B') { //button data packet
                 bnum = pi.getc(); //button number
@@ -77,35 +77,36 @@ void serial_control(void const *agrs) {
                         motor_2_movement = -0.5;
                         }
                             
-                            break;
+                        break;
                        
                         case '6': //backward down arrow
                          if (bhit=='1'){
                         motor_1_movement = 0.5;
                         motor_2_movement = 0.5;
                         }
-                        
-                          
+                                               
                             break;
                         case '7': //left
                          if (bhit=='1'){
-                        motor_1_movement = -0.3;
-                        motor_2_movement = 0.3;
+                        motor_1_movement = -0.5;
+                        motor_2_movement = 0.5;
 
                         }
-
-                            break;
+                        break;
 
                         case '8': //right
                          if (bhit=='1'){
-                        motor_1_movement = 0.3;
-                        motor_2_movement = -0.3;
+                        motor_1_movement = 0.5;
+                        motor_2_movement = -0.5;
 
                         }
 
                             break;
                         
                         default:
+                        // make it stop
+                        motor_1_movement = 0;
+                        motor_2_movement = 0;
                             break;
                     
                 }
@@ -123,7 +124,6 @@ void bluetooth_control(void const *args) {
         while (!bluetooth.readable()) {
             Thread::wait(20);
         }
-       // four_slots.wait();
         motor_mutex.lock();
         if (bluetooth.getc()=='!') {
             if (bluetooth.getc()=='B') { //button data packet
@@ -175,6 +175,8 @@ void bluetooth_control(void const *args) {
                             break;
                         
                         default:
+                        m.speed(0);
+                        m2.speed(0);
                             break;
                     
                 }
@@ -189,7 +191,6 @@ void sonar_control(void const *args) {
         mu.checkDistance();
         sonar_distance = mu.getCurrentDistance();
     }
-
 }
 
 
@@ -214,9 +215,9 @@ void speaker_control(void const *args) {
 
         // Set the speaker to beep
         speaker.period(1.0 / 500.0); // Set frequency of the beep
-        speaker = 0.5; // Turn on speaker at 50% duty cycle
+        speaker = 0.25; // Turn on speaker at 50% duty cycle
         Thread::wait(beep_period *200); // Wait for the same period to complete the cycle
-        speaker = 0.0; // Turn off speaker
+        speaker = 0.25; // Turn off speaker
         Thread::wait(beep_period *200);
        
     }
@@ -225,7 +226,9 @@ void speaker_control(void const *args) {
 
 int main()
 {
-    
+     pi.baud(115200); // change the baud rate to 115200 for faster data transmission
+     //pi.baud(460800);
+     
     mu.startUpdates();//start measuring the distance
   
 
@@ -241,3 +244,5 @@ int main()
     }
  
 }
+
+
