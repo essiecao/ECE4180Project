@@ -9,7 +9,12 @@ Our goal is to put together a robot with autonomous color following capabilities
 A robot with the ability to autonomously drive towards certain predetermined colors.
 
 # Parts List
-...
+- Raspberry Pi 4
+- mbed LPC1768
+- Picamera
+- Ultrasonic sensor
+- Speaker
+- 
 
 # Setup
 ...
