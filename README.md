@@ -30,6 +30,7 @@ Include power/ battery details
 ...
 
 # Media
+- Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
 ...
 
 # Conclusion
