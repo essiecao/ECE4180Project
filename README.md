@@ -21,6 +21,10 @@ Our goal is to put together a robot with autonomous color following capabilities
 
 # Setup
 ...
+Include block diagram
+Include wiring details
+Include power/ battery details
+
 
 # Instructions
 ...
