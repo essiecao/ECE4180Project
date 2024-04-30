@@ -14,7 +14,11 @@ A robot with the ability to autonomously drive towards certain predetermined col
 - Picamera
 - Ultrasonic sensor
 - Speaker
-- 
+- H Bridge Motor Driver
+- Class D Amplifier
+- Bluetooth Module
+- Breadboard Power Supply Module
+- Breadboard Barrel Jack Adapter
 
 # Setup
 ...
