@@ -20,18 +20,22 @@ Our goal is to put together a robot with autonomous color following capabilities
 - Breadboard Barrel Jack Adapter
 
 # Setup
-...
-Include block diagram
+Here is the block diagram:
+![Block Diagram](images/block_diagram.png)
+
 Include wiring details
 Include power/ battery details
-![Block Diagram](images/block_diagram.png)
 
 # Instructions
 ...
 
 # Media
 - Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
-...
+
+- Video of Automatic Object Detection Mode: 
+[Watch the Video](videos /automatic_detection_mode.mp4)
+[Watch the Video](videos /manual_mode.mp4)
+
 
 # Conclusion
 The autonomous color following robot is currently in a very early development stages, with the fundamental ability to follow a user selected color. While still preliminary, this robot holds immense potential for enhancement and adaptation across various sectors, including warehousing, healthcare, home automation and education. In addition to enhancing operational efficiencies, this robot will also introduce new possibilities for automation in industrial environments or everyday life at home by continuing to refine its capabilities such as grabbing items and lifting heavy weights.
