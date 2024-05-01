@@ -33,9 +33,9 @@ The backbone of this project is serial communication from the Raspberry Pi to th
 # Media
 - Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
 
-- Video of Automatic Object Detection Mode: 
-[Watch the Video](videos /automatic_detection_mode.mp4)
-[Watch the Video](videos /manual_mode.mp4)
+- Video of the two modes: 
+[[Watch the Video](videos /automatic_detection_mode.mp4)](https://youtu.be/m48Wb4iO9ZM)
+[[Watch the Video](videos /manual_mode.mp4)](https://youtu.be/f1ZGfoOcz-w)
 
 
 # Conclusion
