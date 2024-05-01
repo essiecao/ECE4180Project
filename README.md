@@ -27,7 +27,8 @@ Include wiring details
 Include power/ battery details
 
 # Instructions
-...
+
+The backbone of this project is serial communication from the Raspberry Pi to the mbed, transferring movement commands in a very similar format to bluetooth command to autonomously control the car. There are two scripts that need to be running for this project to work, the first being object_detection.py, which is running on the Raspberry Pi, filtering out all pixels that aren't of a certain color and determining the center of mass of the remaining detected object. The second script is ECEFinalProject.cpp, which reads in instructions using multithreading, either from the serial port or bluetooth, and drives the robot forwards, backwards, left, right, or stops the robot based on the instructions. It also reads the values from an ultrasonic sensor to tell the distance from upcoming objects and plays a speaker at a certain frequency depending on distance from said objects.
 
 # Media
 - Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
