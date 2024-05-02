@@ -22,10 +22,10 @@ Our goal is to put together a robot with autonomous color following capabilities
 - Breadboard Barrel Jack Adapter
 
 # Setup
-block diagram:
+-block diagram:
 ![Block Diagram](images/block_diagram.png)
 
-Wiring Diagrams:
+-Wiring Diagrams:<br />
 Speaker
 ![speaker](images/table_speaker.png)
 Sonar Sensor
@@ -47,7 +47,7 @@ For the autonomous mode, multiple parts work together, including the Raspberry P
 - Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
 
 - Video of the two modes: 
-https://youtu.be/m48Wb4iO9ZM
+https://youtu.be/m48Wb4iO9ZM <br />
 https://youtu.be/f1ZGfoOcz-w
 
 
