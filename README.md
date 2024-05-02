@@ -33,8 +33,8 @@ Include power/ battery details
 - Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
 
 - Video of Automatic Object Detection Mode: 
-[Watch the Video](videos /automatic_detection_mode.mp4)
-[Watch the Video](videos /manual_mode.mp4)
+![Watch the Video](videos/automatic_detection_mode.mp4)
+![Watch the Video](videos/manual_mode.mp4)
 
 
 # Conclusion
