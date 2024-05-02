@@ -39,8 +39,6 @@ For the autonomous mode, multiple parts work together, including the Raspberry P
 - Video of the two modes: 
 https://youtu.be/m48Wb4iO9ZM
 https://youtu.be/f1ZGfoOcz-w
-![Watch the Video](videos/automatic_detection_mode.mp4)
-![Watch the Video](videos/manual_mode.mp4)
 
 
 # Conclusion
