@@ -6,6 +6,7 @@ Project Members: Matthew Chen, Shibao Su, Essie(Xinyi) Cao, Yash Fichadia
 
 # Summary
 Our goal is to put together a robot with autonomous color following capabilities, where a user can select a specific color, and the robot will autonomously move towards detections of that specific color, stopping when it reaches a certain distance threshold from that object. It will use a Raspberry Pi 4 with a PiCamera running an OpenCV powered project in real time, communicating with an mbed with an h-bridge to drive DC motors. There will also be an ultrasonic sensor indicating distances from nearby objects, using various speaker frequencies, for the safety of the robot. This robot will also have the option to be manually remote controlled, using a bluetooth module and a pushbutton to change modes between manual bluetooth control and autonomous color following.
+![robot](images/robot.JPG)
 
 # Parts List
 - Raspberry Pi 4 (https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
@@ -21,11 +22,20 @@ Our goal is to put together a robot with autonomous color following capabilities
 - Breadboard Barrel Jack Adapter
 
 # Setup
-Here is the block diagram:
+block diagram:
 ![Block Diagram](images/block_diagram.png)
 
-Include wiring details
-Include power/ battery details
+Wiring Diagrams:
+Speaker
+![speaker](images/table_speaker.png)
+Sonar Sensor
+![sonarSensor](images/ultrasonic_sensor.png)
+Bluetooth
+![bluetooth](images/Adafruit.png)
+Left Motor
+![motor1](images/left_motor.png)
+Right Motor
+![motor2](images/right_motor.png)
 
 # Instructions
 
