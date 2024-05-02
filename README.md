@@ -46,7 +46,7 @@ For the autonomous mode, multiple parts work together, including the Raspberry P
 # Media
 - Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
 
-- Video of the two modes: 
+- Video of the two modes: <br /> 
 https://youtu.be/m48Wb4iO9ZM <br />
 https://youtu.be/f1ZGfoOcz-w
 
