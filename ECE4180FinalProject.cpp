@@ -38,22 +38,21 @@ volatile bool mode = 1;
 ultrasonic mu(p11, p12, .1, 1, &dist);
 
 
-// void motor_control(void const *args) {
+void motor_control(void const *args) {
 
-//     while(1) {
-//     motor_mutex.lock();
-//     m.speed(motor_1_movement);
-//     m2.speed(motor_2_movement);
-//     Thread::wait(20);
-//     motor_mutex.unlock();
-//     }
+    while(1) {
+    motor_mutex.lock();
+    m.speed(motor_1_movement);
+    m2.speed(motor_2_movement);
+    Thread::wait(20);
+    motor_mutex.unlock();
+    }
 
-// }
+}
 void serial_control(void const *agrs) {
     char bnum=0;
     char bhit=0;
     while(1) {
-        if(!mode){
         while (!pi.readable()) {
         Thread::wait(20);
         }
@@ -112,12 +111,10 @@ void serial_control(void const *agrs) {
                 }
             }
         }
-        m.speed(motor_1_movement);
-        m2.speed(motor_2_movement);
+        // m.speed(motor_1_movement);
+        // m2.speed(motor_2_movement);
         motor_mutex.unlock();
         }
-    }
-
 
 }
 void bluetooth_control(void const *args) {
@@ -236,8 +233,8 @@ int main()
     mu.startUpdates();//start measuring the distance
   
 
-    // Thread thread2(motor_control);
-    // Thread thread3(serial_control);
+    Thread thread2(motor_control);
+    Thread thread3(serial_control);
     Thread thread4(bluetooth_control);
     Thread thread5(sonar_control);
     Thread thread6(speaker_control);

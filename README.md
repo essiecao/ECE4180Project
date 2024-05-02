@@ -44,7 +44,8 @@ The backbone of this project is serial communication from the Raspberry Pi to th
 For the autonomous mode, multiple parts work together, including the Raspberry Pi, the Pi Camera, the Ultrasonic sensor, the speaker, the H Bridge motor driver, DC motors, the Class D amplifier, and some barrel jacks/ external power supplies. The Raspberry Pi runs a script with OpenCV to determine the next instruction for the robot to take, the Pi Camera provides data for this script, the mbed reads data from the Raspberry Pi, and uses the H Bridge to drive the DC motors either forward or backward to achive 4 movement cases, forwards, backwards, left, or right. The motors are powered off of a 9V battery as a power supply. The ultrasonic sensor and the speaker also form a section of this mode, continuously beeping at different frequencies to indicate an object's distance to any object in the ultrasonic sensor's view. In turn, the manual mode uses many of the same parts, though it differs significantly in the control scheme. Instead, in this mode tohe car relies on fast responses/ commands from the connected bluefruit adafruit app. This app sends commands to a switch case statement which will detmerine if the car should move forwards, backwards, left, or right, depeding on the variable values for each motor. These motors are defined and set separately in the code so that they can move independently, else the car would only be able to move forwards and backwards.
 
 # Media
-- Presentation Slides (https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing)
+- Presentation Slides: <br />
+https://docs.google.com/presentation/d/12a98qyBk1TE1SFsfPouObr0URmi0DXX__ShfMNphmeI/edit?usp=sharing
 
 - Video of the two modes: <br /> 
 https://youtu.be/m48Wb4iO9ZM <br />
